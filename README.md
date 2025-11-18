@@ -18,8 +18,11 @@ A simple and modern FPGA Built-In Self-Test (BIST) monitoring tool with a clean 
 
 ## Project Structure
 ├── index.html # Dashboard UI
+
 ├── styles.css # Styling
+
 ├── script.js # Frontend logic
+
 └── maincode.py # Python simulator
 
 
