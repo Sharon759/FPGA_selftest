@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPGA Solder Joint Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🔧 FPGA Solder Joint Monitoring System</h1>
+            <div class="status-indicator">
+                <span class="status-dot" id="connectionStatus"></span>
+                <span id="connectionText">Connecting...</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <div class="dashboard">
+            <!-- System Overview Cards -->
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Active Monitoring Pins</h3>
+                    <div class="metric-value" id="activePins">8</div>
+                    <div class="metric-label">Pins being monitored</div>
+                </div>
+                <div class="card">
+                    <h3>Current Test Duration</h3>
+                    <div class="metric-value" id="testDuration">02:34:15</div>
+                    <div class="metric-label">Hours:Minutes:Seconds</div>
+                </div>
+                <div class="card">
+                    <h3>Faults Detected</h3>
+                    <div class="metric-value" id="faultCount">12</div>
+                    <div class="metric-label">Resistance spikes ≥ 100Ω</div>
+                </div>
+                <div class="card">
+                    <h3>System Health</h3>
+                    <div class="metric-value" id="systemHealth">85%</div>
+                    <div class="metric-label">Overall health score</div>
+                </div>
+            </div>
+
+            <!-- Real-time Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3>Real-time Resistance Monitoring</h3>
+                    <canvas id="resistanceChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Fault Detection Timeline</h3>
+                    <canvas id="faultChart"></canvas>
+                </div>
+            </div>
+
+            <!-- ML Predictions Section -->
+            <div class="predictions-section">
+                <h2>Machine Learning Predictions</h2>
+                <div class="predictions-grid">
+                    <div class="prediction-card">
+                        <h4>Remaining Useful Life (RUL)</h4>
+                        <div class="prediction-value" id="rulPrediction">47.3 hours</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" style="width: 78%"></div>
+                            <span class="confidence-text">78% confidence</span>
+                        </div>
+                    </div>
+                    <div class="prediction-card">
+                        <h4>Failure Probability (15h)</h4>
+                        <div class="prediction-value" id="failureProbability">23%</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" style="width: 85%"></div>
+                            <span class="confidence-text">85% confidence</span>
+                        </div>
+                    </div>
+                    <div class="prediction-card">
+                        <h4>Degradation Rate</h4>
+                        <div class="prediction-value" id="degradationRate">0.12 Ω/hour</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" style="width: 72%"></div>
+                            <span class="confidence-text">72% confidence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pin Status Grid -->
+            <div class="pin-monitoring">
+                <h3>Individual Pin Status</h3>
+                <div class="pin-grid" id="pinGrid">
+                    <!-- Pin status cards will be generated dynamically -->
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <h3>Test Controls</h3>
+                <div class="controls">
+                    <button id="startTest" class="btn btn-primary">Start Test</button>
+                    <button id="stopTest" class="btn btn-secondary">Stop Test</button>
+                    <button id="resetData" class="btn btn-warning">Reset Data</button>
+                    <button id="exportData" class="btn btn-success">Export Data</button>
+                </div>
+                <div class="test-settings">
+                    <label for="testDuration">Test Duration (hours):</label>
+                    <input type="number" id="testDurationInput" value="15" min="1" max="100">
+                    <label for="threshold">Fault Threshold (Ω):</label>
+                    <input type="number" id="thresholdInput" value="100" min="50" max="500">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
