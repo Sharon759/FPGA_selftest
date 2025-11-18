@@ -1,70 +1,19 @@
-FPGA Self-Test System — Web UI + Python Integration
+# FPGA Self-Test System (Web UI + Python)
 
-A lightweight FPGA Built-In Self-Test (BIST) monitoring tool featuring a modern web interface and a Python backend for real-time data simulation and analysis.
+A simple and modern FPGA Built-In Self-Test (BIST) monitoring tool with a clean web dashboard and a Python-based data simulator.
 
-🚀 Features
-🔹 Real-Time Monitoring
+## Features
+- Real-time resistance monitoring (per pin + overall)
+- Automatic fault detection (≥100Ω spikes)
+- Pin health grid with color indicators
+- Python backend for data simulation
+- Live charts (Chart.js) and fault timeline
+- Start / Stop / Reset controls
+- JSON data export
 
-Live resistance tracking (per pin & overall)
+## Tech Stack
+- Frontend: HTML, CSS, JavaScript  
+- Backend: Python  
+- Charts: Chart.js  
 
-Fault detection (≥100Ω spikes)
-
-Pin health grid (8 pins with status colors)
-
-1-second data updates
-
-🔹 Python Backend
-
-Simulated FPGA BIST data
-
-Fault injection logic
-
-Configurable degradation + resistance model
-
-Easy integration with ML predictions
-
-🔹 Modern Web UI
-
-Clean, responsive dashboard
-
-Real-time line charts
-
-Fault timeline visualization
-
-Interactive controls (Start / Stop / Reset)
-
-JSON export support
-
-🛠️ Tech Stack
-
-Frontend: HTML, CSS, JavaScript
-
-Charts: Chart.js (time-series)
-
-Backend: Python
-
-Design: Gradients, animations, glassmorphism
-
-📁 Project Structure
-├── index.html        # UI layout
-├── styles.css        # Styling + animations
-├── script.js         # Real-time dashboard logic
-└── maincode.py       # Python simulation engine
-
-▶️ How to Run
-1. Run Python simulator
-python maincode.py
-
-2. Open UI
-
-Simply open index.html in your browser.
-
-📦 Future Add-Ons
-
-WebSocket live FPGA data
-
-ML predictions (RUL, failure probability)
-
-Database logging
-
-Alerts & notifications
+## Project Structure
