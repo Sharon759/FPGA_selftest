@@ -17,3 +17,21 @@ A simple and modern FPGA Built-In Self-Test (BIST) monitoring tool with a clean 
 - Charts: Chart.js  
 
 ## Project Structure
+├── index.html # Dashboard UI
+├── styles.css # Styling
+├── script.js # Frontend logic
+└── maincode.py # Python simulator
+
+
+## How to Run
+1. Run the Python simulator:
+2. Open the UI:
+
+
+
+## Future Add-ons
+- WebSocket live FPGA data  
+- ML-based predictions (RUL, failure probability)  
+- Database logging  
+- Alert system  
+
